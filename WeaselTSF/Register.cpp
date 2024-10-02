@@ -104,6 +104,20 @@ BOOL RegisterProfiles() {
         c_clsidTextService, TEXTSERVICE_LANGID_SINGAPORE, c_guidProfile,
         text_service_desc_str, text_service_desc_len, achIconFile, cchIconFile,
         TEXTSERVICE_ICON_INDEX, NULL, 0, FALSE, 0);
+    if (FAILED(hr))
+      goto ExitError;
+
+    hr = pInputProcessorProfileMgr->RegisterProfile(
+        c_clsidTextService, TEXTSERVICE_LANGID_FRANCE, c_guidProfile,
+        text_service_desc_str, text_service_desc_len, achIconFile, cchIconFile,
+        TEXTSERVICE_ICON_INDEX, NULL, 0, FALSE, 0);
+    if (FAILED(hr))
+      goto ExitError;
+    
+    hr = pInputProcessorProfileMgr->RegisterProfile(
+        c_clsidTextService, TEXTSERVICE_LANGID_BELGIUM, c_guidProfile,
+        text_service_desc_str, text_service_desc_len, achIconFile, cchIconFile,
+        TEXTSERVICE_ICON_INDEX, NULL, 0, FALSE, 0);
     if (FAILED(hr)) {
     ExitError:
       pInputProcessorProfileMgr.Release();
@@ -135,6 +149,10 @@ void UnregisterProfiles() {
         c_clsidTextService, TEXTSERVICE_LANGID_MACAU, c_guidProfile, 0);
     hr = pInputProcessorProfileMgr->UnregisterProfile(
         c_clsidTextService, TEXTSERVICE_LANGID_SINGAPORE, c_guidProfile, 0);
+    hr = pInputProcessorProfileMgr->UnregisterProfile(
+        c_clsidTextService, TEXTSERVICE_LANGID_FRANCE, c_guidProfile, 0);
+    hr = pInputProcessorProfileMgr->UnregisterProfile(
+        c_clsidTextService, TEXTSERVICE_LANGID_BELGIUM, c_guidProfile, 0);
     pInputProcessorProfileMgr.Release();
   }
 }
