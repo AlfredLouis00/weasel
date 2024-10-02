@@ -113,7 +113,7 @@ BOOL RegisterProfiles() {
         TEXTSERVICE_ICON_INDEX, NULL, 0, FALSE, 0);
     if (FAILED(hr))
       goto ExitError;
-    
+
     hr = pInputProcessorProfileMgr->RegisterProfile(
         c_clsidTextService, TEXTSERVICE_LANGID_BELGIUM, c_guidProfile,
         text_service_desc_str, text_service_desc_len, achIconFile, cchIconFile,
