@@ -291,6 +291,7 @@ void CCandidateList::StartUI() {
     if (FAILED(hr))
       return;
   }
+  
   if (pUIElementMgr == NULL) {
     return;
   }
