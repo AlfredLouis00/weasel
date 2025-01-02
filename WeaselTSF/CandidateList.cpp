@@ -285,7 +285,7 @@ HRESULT CCandidateList::_UpdateUIElement() {
 
 void CCandidateList::StartUI() {
   com_ptr<ITfThreadMgr> pThreadMgr = _tsf->_GetThreadMgr();
-  if (!pThreadMgr) 
+  if (!pThreadMgr)
     return;
 
   com_ptr<ITfUIElementMgr> pUIElementMgr;
