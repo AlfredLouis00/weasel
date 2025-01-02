@@ -293,7 +293,7 @@ void CCandidateList::StartUI() {
   }
   if (pUIElementMgr == NULL) {
     return;
-}
+  }
 
   if (!_ui->uiCallback())
     _ui->SetUICallBack([this](size_t* const sel, size_t* const hov,
