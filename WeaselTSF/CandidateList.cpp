@@ -286,13 +286,15 @@ HRESULT CCandidateList::_UpdateUIElement() {
 void CCandidateList::StartUI() {
   com_ptr<ITfThreadMgr> pThreadMgr = _tsf->_GetThreadMgr();
   com_ptr<ITfUIElementMgr> pUIElementMgr;
-  auto hr = pThreadMgr->QueryInterface(&pUIElementMgr);
-  if (FAILED(hr))
-    return;
+  if (pThreadMgr) {
+    auto hr = pThreadMgr->QueryInterface(&pUIElementMgr);
+    if (FAILED(hr))
+      return;
 
-  if (pUIElementMgr == NULL) {
-    return;
+    if (pUIElementMgr == NULL) {
+      return;
   }
+}
 
   if (!_ui->uiCallback())
     _ui->SetUICallBack([this](size_t* const sel, size_t* const hov,
