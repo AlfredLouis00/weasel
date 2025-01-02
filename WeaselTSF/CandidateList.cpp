@@ -292,7 +292,7 @@ void CCandidateList::StartUI() {
 
   auto hr = pThreadMgr->QueryInterface(&pUIElementMgr);
   if (FAILED(hr))
-      return;
+    return;
 
   if (pUIElementMgr == NULL) {
     return;
