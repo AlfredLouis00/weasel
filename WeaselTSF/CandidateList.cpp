@@ -290,10 +290,9 @@ void CCandidateList::StartUI() {
     auto hr = pThreadMgr->QueryInterface(&pUIElementMgr);
     if (FAILED(hr))
       return;
-
-    if (pUIElementMgr == NULL) {
-      return;
   }
+  if (pUIElementMgr == NULL) {
+    return;
 }
 
   if (!_ui->uiCallback())
